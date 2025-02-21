@@ -21,6 +21,7 @@ const fetchCheckout = async (checkoutId) => {
       .where("metadata.checkoutId", "==", checkoutId)
       .where("status", "==", "succeeded")
       .get();
+      console.log(`fetch payment`,list.docs[0].data());
     if (list.docs.length === 0) {
       throw new Error("Invalid Checkout ID");
     }
@@ -90,7 +91,7 @@ const fetchCheckout = async (checkoutId) => {
         <SuccessMessage />
         <section className="min-h-screen flex flex-col gap-3 justify-center items-center">
           <div className="flex justify-center w-full">
-            <img src="/svgs/Mobile payments-rafiki.svg" className="h-48" alt="" />
+            <img src="/svgs/p.svg" className="h-48" alt="" />
           </div>
           <h1 className="text-2xl font-semibold text-green">
             Your Order Is{" "}
