@@ -16,7 +16,7 @@ export default function Header() {
       link: "/",
     },
     {
-      name: "About",
+      name: "About - testing",
       link: "/about-us",
     },
     {
