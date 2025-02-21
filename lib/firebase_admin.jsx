@@ -1,8 +1,7 @@
 export const admin = require("firebase-admin");
+import fs from "fs";
 
-const serviceAccount = JSON.parse(
-  process.env.NEXT_PUBLIC_FIREBASE_SERVICE_ACCOUNT_KEYS
-);
+const serviceAccount = JSON.parse(fs.readFileSync("serviceAccountKey.json", "utf8"));
 
 if (admin.apps.length === 0) {
   admin.initializeApp({
