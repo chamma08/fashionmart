@@ -12,7 +12,7 @@ import AdminButton from "./AdminButton";
 export default function Header() {
   const menuList = [
     {
-      name: "Home",
+      name: "Home-testing",
       link: "/",
     },
     {
