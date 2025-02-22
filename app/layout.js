@@ -17,7 +17,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "ASD CAMERA - Best From The Rest",
+  title: "FashionMart",
   description: "Created By Matheesha Dissanayake",
 };
 
