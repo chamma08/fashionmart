@@ -37,7 +37,7 @@ export default async function Home() {
       <Categories categories={categories} />
       <ProductsGridView products={products} />
       <CustomerReviews />
-      <Brands brands={brands} />
+      <Brands brands={brands} /> 
       <Footer />
     </main>
   );
