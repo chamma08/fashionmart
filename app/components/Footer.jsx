@@ -27,7 +27,7 @@ export default function Footer() {
             <div className="space-y-2">
               <p className="flex items-center gap-2">
                 <FaPhone className="text-lg" />
-                +1012 3456 789
+                +94 123 456 789
               </p>
               <p className="flex items-center gap-2">
                 <MdEmail className="text-lg" />
@@ -35,7 +35,7 @@ export default function Footer() {
               </p>
               <p className="flex items-center gap-2">
                 <MdLocationOn className="text-lg" />
-                132 Dartmouth Street, Massachusetts
+                132 Colombo Street, Massachusetts
               </p>
             </div>
           </div>
