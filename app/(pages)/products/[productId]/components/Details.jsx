@@ -34,7 +34,7 @@ export default function Details({ product }) {
       <div className="flex flex-wrap items-center gap-4">
         <Link href={`/checkout?type=buynow&productId=${product?.id}`}>
           <button className="bg-black hover:bg-gray-600 text-white rounded-lg px-4 py-1.5">
-            Rent Now
+            Buy Now
           </button>
         </Link>
         <AuthContextProvider>
