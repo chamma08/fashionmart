@@ -60,7 +60,7 @@ export default function Header() {
         <AuthContextProvider>
           <HeaderClientButtons />
         </AuthContextProvider>
-        <Link href={`/login`}>
+        <Link href={`/account`}>
           <button
             title="My Account"
             className="h-8 w-8 flex justify-center items-center rounded-full hover:bg-gray-50"
