@@ -10,7 +10,6 @@ import { getProductReviewCounts } from "@/lib/firestore/products/count/read";
 import Link from "next/link";
 import { Suspense } from "react";
 
-
 export default function Details({ product }) {
   return (
     <div className="w-full flex flex-col gap-3">
