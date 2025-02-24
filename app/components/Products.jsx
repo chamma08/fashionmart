@@ -107,7 +107,7 @@ export function ProductCard({ product }) {
         <div className="w-full">
           <Link href={`/checkout?type=buynow&productId=${product?.id}`}>
             <button className="flex-1 bg-blue-500 text-white px-4 py-2 rounded-lg text-xs w-full">
-              Rent Now
+              Buy Now
             </button>
           </Link>
         </div>
