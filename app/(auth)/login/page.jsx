@@ -78,7 +78,7 @@ export default function page() {
     <section className="bg-gray-50 min-h-screen flex items-center justify-center">
       <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5">
         <div className="sm:block hidden w-1/2 ">
-          <img className="rounded-2xl" src="/login.png" alt="Logo" />
+          <img className="rounded-2xl" src="/android-chrome-512x512.png" alt="Logo" />
         </div>
         <div className="sm:w-1/2 px-16">
           <motion.h2
