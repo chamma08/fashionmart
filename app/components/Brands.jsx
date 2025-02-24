@@ -57,7 +57,7 @@ export default function Brands({ brands }) {
               <div className="flex flex-col gap-2 items-center justify-center">
                 <div className="h-28 rounded-lg md:p-5 p-2 overflow-hidden">
                   <img
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover p-3"
                     src={brand?.imageURL}
                     alt=""
                   />
