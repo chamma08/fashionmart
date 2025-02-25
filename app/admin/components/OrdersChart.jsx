@@ -1,11 +1,11 @@
 "use client";
 
-import { Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  LineElement,
+  BarElement,
   PointElement,
   Title,
   Tooltip,
@@ -15,22 +15,24 @@ import {
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  LineElement,
+  BarElement,
   PointElement,
   Title,
   Tooltip,
   Legend
 );
 
-export default function RevenueChart({ items }) {
+export default function OrdersChart({ items }) {
   const data = {
     labels: items?.map((item) => item?.date),
     datasets: [
       {
-        label: "Revenue",
-        data: items?.map((item) => (item?.data?.totalRevenue ?? 0) / 100),
+        label: "Orders",
+        data: items?.map((item) => item?.data?.totalOrders),
         backgroundColor: "#879fff20",
         borderColor: "#879fff80",
+        borderWidth: 0.5,
+        barThickness: 30,
       },
     ],
   };
@@ -44,7 +46,7 @@ export default function RevenueChart({ items }) {
       },
       title: {
         display: true,
-        text: "Revenue Line Chart",
+        text: "Total Order Bar Chart",
       },
     },
     scales: {
@@ -61,7 +63,7 @@ export default function RevenueChart({ items }) {
 
   return (
     <section className="bg-white p-5 rounded-xl shadow w-full h-[430px]">
-      <Line data={data} options={options} />
+      <Bar data={data} options={options} />
     </section>
   );
 }
