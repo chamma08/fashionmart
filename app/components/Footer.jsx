@@ -27,15 +27,15 @@ export default function Footer() {
             <div className="space-y-2">
               <p className="flex items-center gap-2">
                 <FaPhone className="text-lg" />
-                +94 123 456 789
+                +94 (11)230 5656
               </p>
               <p className="flex items-center gap-2">
                 <MdEmail className="text-lg" />
-                demo@gmail.com
+                spmfashion@gmail.com
               </p>
               <p className="flex items-center gap-2">
                 <MdLocationOn className="text-lg" />
-                132 Colombo Street, Massachusetts
+                No.80, Justice Akbar Mawatha, Colombo 02
               </p>
             </div>
           </div>
