@@ -1,126 +1,68 @@
 "use client";
 
-import { Button } from "@nextui-org/react";
-import { collection } from "firebase/firestore";
-import { Heart } from "lucide-react";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import Slider from "react-slick";
-import { easeInOut, motion } from "framer-motion";
 
-const fadeUp = (delay) => {
-  return {
-    hidden: { opacity: 0, y: 100, scale: 0.5 },
-    show: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        delay: delay,
-        duration: 0.5,
-        ease: easeInOut,
-      },
-    },
-    exit: {
-      opacity: 0,
-      y: 50,
-      scale: 0.5,
-      transition: {
-        duration: 0.5,
-        ease: easeInOut,
-      },
-    },
-  };
-};
-
-export default function Collections({ collections }) {
-  var settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
-  if (collections.length === 0) {
-    return <></>;
-  }
+const Collections = ({ collections }) => {
+  if (collections.length === 0) return null;
 
   return (
-    <div className="overflow-hidden md:p-10 p-5 -z-50">
-      <div className="text-center mb-4">
-        <motion.h1
-          variants={fadeUp(0.2)}
-          initial="hidden"
-          whileInView="show"
-          className="text-lg md:text-lg font-semibold"
-        >
-          Collections
-        </motion.h1>
-      </div>
-      <Slider {...settings}>
-        {(collections?.length <= 2
-          ? [...collections, ...collections, ...collections]
-          : collections
-        )?.map((collection) => {
-          return (
-            <div className="px-2">
-              <div className="flex gap-4 bg-gradient-to-tr to-[#d9e2f1] from-[#cce7f5] p-7 w-full rounded-xl h-full">
-                <div className="w-full flex flex-col gap-2">
-                  <div className="flex flex-col gap-4">
-                    <h1 className="md:text-lg text-base font-semibold">
-                      {collection?.title}
-                    </h1>
-                    <h1 className="text-gray-600 text-xs md:text-sm max-w-96 line-clamp-2">
-                      {collection?.subTitle}
-                    </h1>
-                  </div>
-                  <div className="flex gap-4">
-                    <Link href={`/collections/${collection?.id}`}>
-                      <button className="bg-blue-500 hover:bg-blue-950 text-white text-xs md:text-sm px-4 py-2 rounded-lg">
-                        SHOP NOW
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-                <div className="w-full">
-                  <img
-                    className="h-[4rem] md:h-[9rem]"
-                    src={collection?.imageURL}
-                    alt={collection?.title}
-                  />
+    <div className="my-16 w-[80%] mx-auto">
+      <motion.h2 
+        className="text-2xl font-bold text-center mb-8"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Explore Our Latest Collections For You
+      </motion.h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4">
+          <div className="rounded-lg overflow-hidden relative h-[344px]">
+            <img
+              src={collections[0]?.imageURL}
+              alt={collections[0]?.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white">
+              <h3 className="text-lg font-bold mb-1">{collections[0]?.title}</h3>
+              <p className="text-xs mb-2">{collections[0]?.subTitle}</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            {collections.slice(1, 3).map((collection, index) => (
+              <div key={index} className="rounded-lg overflow-hidden relative h-[313px]">
+                <img
+                  src={collection.imageURL}
+                  alt={collection.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent text-white">
+                  <h3 className="text-sm font-bold">{collection.title}</h3>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </Slider>
+            ))}
+          </div>
+        </div>
+        <div className="rounded-lg overflow-hidden relative h-[677px]">
+          <img
+            src={collections[3]?.imageURL}
+            alt={collections[3]?.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent text-white">
+            <h3 className="text-xl font-bold mb-1">{collections[3]?.title}</h3>
+            <p className="text-sm mb-3">{collections[3]?.subTitle}</p>
+            <Link href={`/collections/${collections[3]?.id}`}>
+              <button className="px-4 py-1 bg-white text-black text-xs font-medium rounded">
+                Shop Now
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default Collections;
