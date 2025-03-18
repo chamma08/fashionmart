@@ -36,8 +36,8 @@ export default async function Home() {
       <Services />
       <Categories categories={categories} />
       <ProductsGridView products={products} />
-      <CustomerReviews />
-      <Brands brands={brands} />
+     {/*  <CustomerReviews /> */}
+      <Brands brands={brands} /> 
       <Footer />
     </main>
   );
