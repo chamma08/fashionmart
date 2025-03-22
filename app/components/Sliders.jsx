@@ -41,7 +41,7 @@ export default function FeaturedProductSlider({ featuredProducts }) {
   var settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 200,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -53,7 +53,7 @@ export default function FeaturedProductSlider({ featuredProducts }) {
         {featuredProducts?.map((product, index) => {
           return (
             <div key={index} className="p-4">
-              <div className="flex flex-col-reverse md:flex-row gap-6 bg-gradient-to-r from-[#e0f7ff] via-[#dbeeff] to-[#d3d3d3] p-6 md:p-12 rounded-lg shadow-lg">
+              <div className="flex flex-col-reverse md:flex-row gap-6 bg-blue-100 p-6 md:p-12 rounded-lg shadow-lg">
                 <div className="flex-1 flex flex-col gap-6">
                   <h2 className="text-gray-700 text-xs md:text-base font-medium tracking-wider">
                     HOT ARRIVALS
@@ -86,7 +86,7 @@ export default function FeaturedProductSlider({ featuredProducts }) {
                       className="flex items-center gap-4"
                     >
                       <Link href={`/checkout?type=buynow&productId=${product?.id}`}>
-                        <button className="bg-blue-500 text-white text-xs md:text-sm px-5 py-2 rounded-lg shadow-md transition-all">
+                        <button className="bg-black text-white text-xs md:text-sm px-5 py-2 rounded-lg shadow-md transition-all">
                           BUY NOW
                         </button>
                       </Link>
