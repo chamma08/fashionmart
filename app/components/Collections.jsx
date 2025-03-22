@@ -8,7 +8,7 @@ const Collections = ({ collections }) => {
 
   return (
     <div className="my-16 w-[80%] mx-auto">
-      <motion.h2 
+      <motion.h2
         className="text-2xl font-bold text-center mb-8"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -25,13 +25,23 @@ const Collections = ({ collections }) => {
               className="w-full h-full object-cover"
             />
             <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white">
-              <h3 className="text-lg font-bold mb-1">{collections[0]?.title}</h3>
+              <h3 className="text-lg font-bold mb-1">
+                {collections[0]?.title}
+              </h3>
               <p className="text-xs mb-2">{collections[0]?.subTitle}</p>
+              <Link href={`/collections/${collections[0]?.id}`}>
+                <button className="px-4 py-1 bg-white text-black text-xs font-medium rounded">
+                  Shop Now
+                </button>
+              </Link>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
             {collections.slice(1, 3).map((collection, index) => (
-              <div key={index} className="rounded-lg overflow-hidden relative h-[313px]">
+              <div
+                key={index}
+                className="rounded-lg overflow-hidden relative h-[313px]"
+              >
                 <img
                   src={collection.imageURL}
                   alt={collection.title}
@@ -39,6 +49,12 @@ const Collections = ({ collections }) => {
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent text-white">
                   <h3 className="text-sm font-bold">{collection.title}</h3>
+                  <p className="text-xs">{collection.subTitle}</p>
+                  <Link href={`/collections/${collections[3]?.id}`}>
+                    <button className="px-4 py-1 bg-white text-black text-xs font-medium rounded">
+                      Shop Now
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
