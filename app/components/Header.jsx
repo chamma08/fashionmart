@@ -25,7 +25,7 @@ export default function Header() {
     },
   ];
   return (
-    <motion.nav
+    <nav
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 1 }}
@@ -72,6 +72,6 @@ export default function Header() {
           <LogoutButton />
         </AuthContextProvider>
       </div>
-    </motion.nav>
+    </nav>
   );
 }
